@@ -1,0 +1,17 @@
+<h1>Artist Name: <%= @artist.name %></h1>
+
+<h2>Title: <%= @artist.title %></h2>
+
+<h3>Age: <%= @artist.age %></h3>
+
+<h3>Instruments Played:</h3>
+
+<ul>
+	<% unless @artist.instruments.empty? %>
+		<% @artist.instruments.each do |i| %>
+			<li><%= i.name %></li>
+		<% end %>
+		<% else %>
+			<li>This artist doesn't played any instruments. Weird, huh?!</li>
+	<% end %>
+</ul>
