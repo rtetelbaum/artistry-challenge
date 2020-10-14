@@ -1,0 +1,15 @@
+<h1>Add Instrument to an Artist</h1>
+
+<% if flash[:errors] %>
+	<ul>
+		<% flash[:errors].each do |error| %>
+			<li style="color:red;"><%= error %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_for @artist_instruments do |f| %>
+	<%= f.collection_select :artist_id, @artists, :id, :name %><br>
+	<%= f.collection_select :instrument_id, @instruments, :id, :name %><br>
+	<%= f.submit %>
+<% end %>
